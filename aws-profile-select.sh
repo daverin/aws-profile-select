@@ -23,7 +23,7 @@ else
   fi
 fi
 
-profiles=$(grep '^\[' <~/.aws/config | sed -E 's/\[profile (.*)/\1/g' | sed 's/\[//; s/\]//')
+profiles=$(grep '^\[profile' ~/.aws/config | sed -E 's/^\[profile ([^]]+)\].*/\1/')
 
 IFSBAK=$IFS
 IFS=$'\n'
